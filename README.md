@@ -1,2 +1,2 @@
 # supweather
-Une application de météo avec MERN
+Une application de météo en MERN Stack
