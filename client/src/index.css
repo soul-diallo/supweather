@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "refined";
+  default: true;
+  prefers-dark: true;
+  color-scheme: dark;
+
+  /* Refined Dark */
+  --color-base-100: oklch(13% 0.01 260);
+  --color-base-200: oklch(17% 0.01 260);
+  --color-base-300: oklch(22% 0.01 260);
+  --color-base-content: oklch(95% 0.01 260);
+
+  /* Primary - Warm Amber */
+  --color-primary: oklch(78% 0.12 70);
+  --color-primary-content: oklch(15% 0.02 70);
+
+  /* Secondary - Soft Lavender */
+  --color-secondary: oklch(75% 0.08 290);
+  --color-secondary-content: oklch(15% 0 0);
+
+  /* Accent */
+  --color-accent: oklch(80% 0.1 70);
+  --color-accent-content: oklch(15% 0 0);
+
+  /* Neutral */
+  --color-neutral: oklch(25% 0.01 260);
+  --color-neutral-content: oklch(90% 0 0);
+
+  /* Status colors */
+  --color-info: oklch(70% 0.1 240);
+  --color-info-content: oklch(98% 0 0);
+  --color-success: oklch(72% 0.12 160);
+  --color-success-content: oklch(15% 0 0);
+  --color-warning: oklch(80% 0.12 85);
+  --color-warning-content: oklch(15% 0 0);
+  --color-error: oklch(68% 0.15 25);
+  --color-error-content: oklch(98% 0 0);
+
+  --radius-selector: 0.75rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+  --border: 1px;
+};
+
+/* ============================================
+   CSS Custom Properties
+   ============================================ */
+:root {
+  --bg-primary: #111118;
+  --bg-card: #18181f;
+  --bg-card-hover: #1e1e26;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-hover: rgba(255, 255, 255, 0.12);
+  --text-primary: #f4f4f5;
+  --text-secondary: rgba(244, 244, 245, 0.6);
+  --text-muted: rgba(244, 244, 245, 0.4);
+  --accent: #e4a853;
+  --accent-soft: rgba(228, 168, 83, 0.15);
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   Card Styles
+   ============================================ */
+.card-refined {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.25s ease;
+}
+
+.card-refined:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+}
+
+/* ============================================
+   Accent Elements
+   ============================================ */
+.accent-text {
+  color: var(--accent);
+}
+
+.accent-border {
+  border-color: var(--accent);
+}
+
+.accent-glow {
+  box-shadow: 0 0 20px rgba(228, 168, 83, 0.15);
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
+.stagger-5 { animation-delay: 0.25s; }
+.stagger-6 { animation-delay: 0.3s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
+}

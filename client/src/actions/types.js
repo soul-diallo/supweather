@@ -1,3 +1,4 @@
-export const GET_ERRORS = "GET_ERRORS";
-export const USER_LOADING = "USER_LOADING";
-export const SET_CURRENT_USER = "SET_CURRENT_USER";
+export const GET_WEATHER = "GET_WEATHER";
+export const WEATHER_LOADING = "WEATHER_LOADING";
+export const WEATHER_ERROR = "WEATHER_ERROR";
+export const CLEAR_WEATHER = "CLEAR_WEATHER";
