@@ -59,12 +59,29 @@ class Landing extends Component {
                         type="text"
                         placeholder="Enter a city (e.g. Paris, Tokyo)"
                         className="search-input"
+                        aria-label="Enter city name for weather forecast"
+                        aria-describedby={error ? "search-error" : undefined}
+                        autoComplete="off"
                     />
-                    <button type="submit" className="search-button">
+                    <button 
+                        type="submit" 
+                        className="search-button"
+                        aria-label={loading ? "Loading weather data" : "Get weather forecast"}
+                        disabled={loading}
+                    >
                         {loading ? <div className="spinner-small"></div> : <i className="wi wi-search"></i>}
                     </button>
                 </form>
-                {error && <div className="error-message">{error.message || "City not found"}</div>}
+                {error && (
+                    <div 
+                        className="error-message" 
+                        id="search-error"
+                        role="alert"
+                        aria-live="polite"
+                    >
+                        {error.message || "City not found"}
+                    </div>
+                )}
             </div>
 
             {/* Loading Overlay or Spinner could go here */}
