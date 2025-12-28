@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./Navbar.css";
 
 class Navbar extends Component {
   render() {
@@ -9,16 +9,15 @@ class Navbar extends Component {
         <nav className="z-depth-0">
           <div className="nav-wrapper white">
             <Link
-              to="/dashboard"
+              to="/"
               style={{
-                fontFamily: "monospace"
+                fontFamily: "Poppins",
+                fontWeight: "600"
               }}
               className="col s5 brand-logo center black-text"
             >
-              
-              SUPWEATHER
+              SupWeather
             </Link>
-
           </div>
         </nav>
       </div>

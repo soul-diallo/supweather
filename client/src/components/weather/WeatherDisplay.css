@@ -1,0 +1,149 @@
+/* WeatherDisplay.css */
+
+.weather-wrapper {
+    width: 100%;
+    margin-top: 20px;
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Themes (Dynamic Backgrounds handled in Landing or via wrapper context if expanded, 
+   but here we style the card contents to pop against colored backgrounds) */
+
+/* Layout */
+.weather-main {
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.location-badge {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.main-icon-container {
+    font-size: 6rem;
+    margin: 1rem 0;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+    animation: float 6s ease-in-out infinite;
+}
+
+.temperature-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.temp-value {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: -2px;
+}
+
+.weather-desc {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+/* Details Grid */
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.glass-panel-dark {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    padding: 1.5rem;
+    /* Nested glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail-item i {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    opacity: 0.8;
+}
+
+.detail-item .value {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.detail-item .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-top: 4px;
+    letter-spacing: 1px;
+}
+
+/* Animations */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .temp-value {
+        font-size: 4.5rem;
+    }
+    
+    .main-icon-container {
+        font-size: 5rem;
+    }
+    
+    .glass-panel {
+        padding: 1.5rem;
+    }
+    
+    .weather-details {
+        padding: 1rem;
+    }
+}
